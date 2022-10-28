@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Trivia App</title>
+    <link rel="stylesheet" href="/static/home.css" />
+</head>
+<body class="container">
+    <h1>Animal Trivia</h1>
+    <a class="new-question" href="{{ url_for('add_question')}}">Add a New Question</a>
+    <ul>
+        {% for question in questions %}
+        <li>
+            <a href="{{ url_for('questions_view', index=loop.index0) }}">{{ question.question }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
